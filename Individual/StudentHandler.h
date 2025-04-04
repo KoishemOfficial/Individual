@@ -41,3 +41,4 @@ void displayStudentByName();
 void displayStudentBySurname();
 void displayAllStudentsAlphabetically();
 void displayTopStudents();
+void replaceStudentById();

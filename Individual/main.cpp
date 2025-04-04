@@ -14,7 +14,7 @@ void quitApp() {
 int main() {
 
     void (*operations[])() = { 
-        changeName, changeSurname, changeGrade, exportStudentToFile, importStudentFromFile, displayAllStudents, displayStudentByName, displayStudentBySurname, deleteStudentById, displayAllStudentsAlphabetically, displayTopStudents
+        changeName, changeSurname, changeGrade, exportStudentToFile, importStudentFromFile, displayAllStudents, displayStudentByName, displayStudentBySurname, deleteStudentById, displayAllStudentsAlphabetically, displayTopStudents, replaceStudentById
     };
 
     while (running) {
@@ -35,6 +35,7 @@ int main() {
         cout << "9. deleteStudentById\n";
         cout << "10. displayAllStudentsAlphabetically\n";
         cout << "11. displayTopStudents\n";
+        cout << "12. replaceStudentById\n";
 
         cin >> choice;
 

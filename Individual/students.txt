@@ -1,3 +1,4 @@
-0 Konstantin Romaschenko 10 12 12 12 10 11 12 12 12 5 
+0 Konstantin Romaschenko 10 11 12 11 12 11 10 11 12 12 
 1 Dmitriy Visnecov 9 8 9 7 9 8 5 9 7 7 
 2 Aliona Bershova 11 12 12 7 9 12 11 8 12 12 
+3 Natasha Bershova 11 12 12 7 9 12 11 8 12 12 

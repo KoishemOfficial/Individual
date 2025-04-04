@@ -400,3 +400,67 @@ void displayTopStudents() {
 
     file.close();
 }
+
+void replaceStudentById() {
+    int searchId = -1;
+
+    cout << "Enter the ID of the student to replace: ";
+    cin >> searchId;
+    cout << '\n';
+
+    ifstream file("students.txt");
+
+    if (!file) {
+        cout << "[ERROR] Couldn't open the file.\n";
+        return;
+    }
+
+    ofstream tempFile("temp.txt");
+
+    if (!tempFile) {
+        cout << "[ERROR] Couldn't create a temporary file.\n";
+        file.close();
+        return;
+    }
+
+    int id;
+    string name, surname;
+    int grades[GRADE_SIZE];
+    bool found = false;
+
+    while (file >> id >> name >> surname) {
+        for (int i = 0; i < GRADE_SIZE; ++i) {
+            file >> grades[i];
+        }
+
+        if (id == searchId) {
+            found = true;
+
+            tempFile << searchId << " " << temp.name << " " << temp.surname << " ";
+            for (int i = 0; i < GRADE_SIZE; ++i) {
+                tempFile << temp.grades[i] << " ";
+            }
+            tempFile << "\n";
+        }
+        else {
+            tempFile << id << " " << name << " " << surname << " ";
+            for (int i = 0; i < GRADE_SIZE; ++i) {
+                tempFile << grades[i] << " ";
+            }
+            tempFile << "\n";
+        }
+    }
+
+    file.close();
+    tempFile.close();
+
+    if (found) {
+        remove("students.txt");
+        rename("temp.txt", "students.txt");
+        cout << "Student with ID " << searchId << " was successfully replaced.\n";
+    }
+    else {
+        remove("temp.txt");
+        cout << "[ERROR] Student with ID " << searchId << " not found.\n";
+    }
+}
