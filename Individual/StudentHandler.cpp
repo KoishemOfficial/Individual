@@ -458,6 +458,7 @@ void replaceStudentById() {
         remove("students.txt");
         rename("temp.txt", "students.txt");
         cout << "Student with ID " << searchId << " was successfully replaced.\n";
+        ResetTemp();
     }
     else {
         remove("temp.txt");
